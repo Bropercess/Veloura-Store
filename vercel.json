@@ -1,14 +1,11 @@
 {
-  "projects": [
-    {
-      "name": "frontend",
-      "src": "frontend/**",
-      "use": "@vercel/node"
-    },
-    {
-      "name": "backend",
-      "src": "backend/**",
-      "use": "@vercel/node"
+  "functions": {
+    "api/**/*": {
+      "runtime": "nodejs16"
     }
+  },
+  "builds": [
+    { "src": "frontend/**", "use": "@vercel/next" },
+    { "src": "backend/**", "use": "@vercel/node" }
   ]
 }
